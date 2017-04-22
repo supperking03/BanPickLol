@@ -76,6 +76,7 @@
             this.SwapButton14 = new System.Windows.Forms.Button();
             this.SwapText15 = new System.Windows.Forms.TextBox();
             this.SwapButton15 = new System.Windows.Forms.Button();
+            this.lblpick = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pick1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pick2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pick3)).BeginInit();
@@ -526,12 +527,25 @@
             this.SwapButton15.UseVisualStyleBackColor = false;
             this.SwapButton15.Click += new System.EventHandler(this.Swap);
             // 
+            // lblpick
+            // 
+            this.lblpick.AutoSize = true;
+            this.lblpick.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpick.ForeColor = System.Drawing.Color.Orange;
+            this.lblpick.Location = new System.Drawing.Point(626, 87);
+            this.lblpick.Name = "lblpick";
+            this.lblpick.Size = new System.Drawing.Size(71, 13);
+            this.lblpick.TabIndex = 45;
+            this.lblpick.Text = "chọn tướng";
+            this.lblpick.Click += new System.EventHandler(this.lblpick_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(944, 501);
+            this.Controls.Add(this.lblpick);
             this.Controls.Add(this.SwapText15);
             this.Controls.Add(this.SwapButton15);
             this.Controls.Add(this.SwapText14);
@@ -656,6 +670,7 @@
         private System.Windows.Forms.Button SwapButton14;
         private System.Windows.Forms.TextBox SwapText15;
         private System.Windows.Forms.Button SwapButton15;
+        private System.Windows.Forms.Label lblpick;
     }
 }
 

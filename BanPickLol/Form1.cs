@@ -313,6 +313,8 @@ namespace BanPickLol
         }
 
         Thread a; // tiểu trình thay đổi màu + time
+        Thread b; // hiện label đang pick
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -360,6 +362,29 @@ namespace BanPickLol
             //receiveData = new Thread(receive);
             //receiveData.Start();
             a.Start();
+
+            b = new Thread(appearPick);
+            b.Start();
+
+
+        }
+
+        private void appearPick() // đổi màu chữ "chọn tướng" nhấp nháy
+        {
+            while (time > 0)
+            {
+
+                try
+                {
+                    lblpick.ForeColor = Color.Orange;
+                    Thread.Sleep(500);
+                    lblpick.ForeColor = Color.Black;
+                    Thread.Sleep(500);
+                }
+                catch
+                { }
+
+            }
         }
 
         private void splashscreen()
@@ -430,6 +455,7 @@ namespace BanPickLol
             catch
             {
                 a.Abort();
+                b.Abort();
                 //res = MessageBox.Show("BAN/PICK IS ENDED !","Hết", MessageBoxButtons.OK);
                 res = 999;
 
@@ -506,17 +532,88 @@ namespace BanPickLol
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             a.Abort();
+            b.Abort();
         }
 
 
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (banType == 0) // set vị trí của chữ "chọn tướng"
+            {
+                switch (turn)
+                {
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        lblpick.Visible = false;
+                        break;
+                    case 6:
+                    case 9:
+                    case 10:
+                    case 13:
+                    case 14:
+                        lblpick.Visible = true;
+                        lblpick.Location = new Point(arrbox[turn].Location.X + 148, arrbox[turn].Location.Y + 26);
+                        break;
+                    default:
+                        try
+                        {
+                            lblpick.Visible = true;
+                            lblpick.Location = new Point(626, arrbox[turn].Location.Y + 26);
+                        }
+                        catch
+                        { }
 
+                        break;
+
+                }
+            }
+            else
+            {
+                switch (turn)
+                {
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 12:
+                    case 13:
+                    case 14:
+                    case 15:
+                        lblpick.Visible = false;
+                        break;
+                    case 6:
+                    case 9:
+                    case 10:
+                    case 17:
+                    case 18:
+                        lblpick.Visible = true;
+                        lblpick.Location = new Point(arrbox[turn].Location.X + 148, arrbox[turn].Location.Y + 26);
+                        break;
+                    default:
+                        try
+                        {
+                            lblpick.Visible = true;
+                            lblpick.Location = new Point(626, arrbox[turn].Location.Y + 26);
+                        }
+                        catch
+                        { }
+
+                        break;
+
+                }
+            }
             if (res == 999)
             {
                 listView1.Enabled = false;
                 button1.Enabled = false;
+                lblpick.Visible = false;
 
                 label2.Text = "Giai đoạn Swap !";
                 label1.Enabled = false;
@@ -547,6 +644,7 @@ namespace BanPickLol
             }
             if (result == DialogResult.OK)
             {
+                b.Abort();
                 a.Abort();
                 this.Close();
             }
@@ -647,6 +745,11 @@ namespace BanPickLol
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblpick_Click(object sender, EventArgs e)
         {
 
         }
