@@ -93,22 +93,44 @@ namespace BanPickLol
             g.Dispose();
             return newBitmap;
         }
-
         private static void DrawCross(Bitmap original)
         {
-            Graphics g = Graphics.FromImage(original);
+            Bitmap mask = new Bitmap("ban.png");
 
-            Pen pen = new Pen(Color.Red, 5);
-            int x1 = 0;
-            int x2 = original.Width;
-            int y1 = 0;
-            int y2 = original.Height;
-
-            g.DrawLine(pen, x1, y1, x2, y2);
-            g.DrawLine(pen, x2, y1, x1, y2);
-
-            g.Dispose();
+            for (int i = 0; i < mask.Width; i++)
+            {
+                for (int j = 0; j < mask.Height; j++)
+                {
+                    if (mask.GetPixel(i, j).R < 100)
+                    {
+                        original.SetPixel(i + original.Width / 2 - mask.Width / 2, j + original.Height - mask.Height, Color.Red);
+                    }
+                }
+            }
         }
+
+        //private static void DrawCross(Bitmap original)
+        //{
+        //    Graphics originalGraphics = Graphics.FromImage(original);
+
+        //    Pen pen = new Pen(Color.Red, 5);
+        //    int x1 = 0;
+        //    int x2 = original.Width;
+        //    int y1 = 0;
+        //    int y2 = original.Height;
+
+        //    originalGraphics.DrawLine(pen, x1, y1, x2, y2);
+        //    originalGraphics.DrawLine(pen, x2, y1, x1, y2);
+
+        //    //Bitmap mask = new Bitmap("ban.png");
+
+        //    //for(int i = original.Height; i >= original.Height - mask.Height; i--)
+        //    //{
+        //    //    for(int j)
+        //    //}
+
+        //    originalGraphics.Dispose();
+        //}
 
 
         List<string> arrPath = new List<string>();
