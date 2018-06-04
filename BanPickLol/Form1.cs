@@ -1,35 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
 using System.Drawing.Imaging;
-using System.Net.Http;
-using System.Net;
 
 namespace BanPickLol
 {
     public partial class Form1 : Form
     {
         string selected;
-        int time = 30;
+        int time = 60;
         PictureBox[] arrbox = new PictureBox[20];
         List<string> arrName = new List<string>();
         string currenName;
 
         int banType;
 
-        public Form1(int BanType)
+        string p1;
+        string p2;
+        string p3;
+        string p4;
+        string p5;
+        string p6;
+        string p7;
+        string p8;
+        string p9;
+        string p10;
+
+
+        public Form1(int BanType,string _p1, string _p2, string _p3, string _p4, string _p5, string _p6, string _p7, string _p8, string _p9, string _p10)
         {
             
             banType = BanType;
             InitializeComponent();
+
+            p1 = _p1;
+            p2 = _p2;
+            p3 = _p3;
+            p4 = _p4;
+            p5 = _p5;
+            p6 = _p6;
+            p7 = _p7;
+            p8 = _p8;
+            p9 = _p9;
+            p10 = _p10;
+
+
             arrbox[0] = ban1;
             arrbox[1] = ban2;
             arrbox[2] = ban3;
@@ -223,29 +242,31 @@ namespace BanPickLol
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text != "")
+            if ( textBox1.Text != "" )
             {
-                for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                for ( int i = listView1.Items.Count - 1; i >= 0; i-- )
                 {
-                    var item = listView1.Items[i];
-                    if (item.Text.ToLower().Contains(textBox1.Text.ToLower()))
+                    var item = listView1.Items [ i ];
+                    if ( item.Text.ToLower ( ).Contains ( textBox1.Text.ToLower ( ) ) )
                     {
                         item.BackColor = SystemColors.Highlight;
                         item.ForeColor = SystemColors.HighlightText;
                     }
                     else
                     {
-                        listView1.Items.Remove(item);
+                        listView1.Items.Remove ( item );
                     }
                 }
-                if (listView1.SelectedItems.Count == 1)
+
+                if ( listView1.SelectedItems.Count == 1 )
                 {
-                    listView1.Focus();
+                    listView1.Focus ( );
                 }
             }
             else
             {
-                populate();
+                populate ( );
+
                 //LoadContacts();
                 //RefreshAll();
                 //populate();
@@ -310,14 +331,65 @@ namespace BanPickLol
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+
         }
 
+
         Thread a; // tiểu trình thay đổi màu + time
-        Thread b; // hiện label đang pick
+        /*Thread b;*/ // hiện label đang pick
+        Thread c;
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            labelName1.Text = p1;
+            labelName2.Text = p2;
+            labelName3.Text = p3;
+            labelName4.Text = p4;
+            labelName5.Text = p5;
+            labelName6.Text = p6;
+            labelName7.Text = p7;
+            labelName8.Text = p8;
+            labelName9.Text = p9;
+            labelName10.Text = p10;
 
+
+            labelName1.Parent = pick1;
+            labelName2.Parent = pick2;
+            labelName3.Parent = pick3;
+            labelName4.Parent = pick4;
+            labelName5.Parent = pick5;
+            labelName6.Parent = pick6;
+            labelName7.Parent = pick7;
+            labelName8.Parent = pick8;
+            labelName9.Parent = pick9;
+            labelName10.Parent = pick10;
+
+            labelName1.Location = new Point(65,35);
+            labelName2.Location = new Point(65, 35);
+            labelName3.Location = new Point(65, 35);
+            labelName4.Location = new Point(65, 35);
+            labelName5.Location = new Point(65, 35);
+
+            labelName6.Location = new Point(5, 35);
+            labelName7.Location = new Point(5, 35);
+            labelName8.Location = new Point(5, 35);
+            labelName9.Location = new Point(5, 35);
+            labelName10.Location = new Point(5, 35);
+
+
+
+
+
+            label4.Visible = false;
+            label3.Visible = false;
+            lbltest.Parent = pick1;
+            var pos = this.PointToScreen(lbltest.Location);
+            pos = pick1.PointToClient(pos);
+            //lbltest.Parent = pick1;
+            lbltest.Location = pos;
+            lbltest.BackColor = Color.Transparent;
+            lbltest.ForeColor = Color.Transparent;
+            //lblpick.BackColor = Color.Transparent;
 
             // enable
             SwapButton01.Visible = false;
@@ -363,29 +435,44 @@ namespace BanPickLol
             //receiveData.Start();
             a.Start();
 
-            b = new Thread(appearPick);
-            b.Start();
+            //b = new Thread(appearPick);
+            //b.Start();
+
+            c = new Thread(nhay);
+            c.Start();
 
 
         }
 
-        private void appearPick() // đổi màu chữ "chọn tướng" nhấp nháy
+        private void nhay()
         {
-            while (time > 0)
+           while (time > 0)
             {
-
-                try
-                {
-                    lblpick.ForeColor = Color.Orange;
-                    Thread.Sleep(500);
-                    lblpick.ForeColor = Color.Black;
-                    Thread.Sleep(500);
-                }
-                catch
-                { }
-
+                lbltest.ForeColor = Color.White;
+                Thread.Sleep(500);
+                lbltest.ForeColor = Color.Yellow;
+                Thread.Sleep(500);
             }
+
         }
+
+        //private void appearPick() // đổi màu chữ "chọn tướng" nhấp nháy
+        //{
+        //    while (time > 0)
+        //    {
+
+        //        try
+        //        {
+        //            lblpick.ForeColor = Color.Orange;
+        //            Thread.Sleep(500);
+        //            lblpick.ForeColor = Color.Black;
+        //            Thread.Sleep(500);
+        //        }
+        //        catch
+        //        { }
+
+        //    }
+        //}
 
         private void splashscreen()
         {
@@ -395,7 +482,7 @@ namespace BanPickLol
         DialogResult result;
         private void ColorChange()
         {
-            if(time == 30)
+            if(time == 60)
             {
                 MessageBox.Show("Are you ready ?");
             }
@@ -427,7 +514,7 @@ namespace BanPickLol
         int res = 0;
         private void button1_Click_1(object sender, EventArgs e)
         {
-            time = 30; // hồi lại 30s khi pick xong
+            time = 60; // hồi lại 30s khi pick xong
             arrName.Add(currenName);// sau khi click no them cai path moi vao list hinh đã ban pick
             populate();// load lai list
             turn++; // tăng lượt
@@ -455,9 +542,11 @@ namespace BanPickLol
             catch
             {
                 a.Abort();
-                b.Abort();
+                //b.Abort();
+                c.Abort();
                 //res = MessageBox.Show("BAN/PICK IS ENDED !","Hết", MessageBoxButtons.OK);
                 res = 999;
+
 
             }
 
@@ -469,7 +558,32 @@ namespace BanPickLol
                 button1.Enabled = false;
             }
 
+            if(res == 999)
+            {
+                label4.Visible = true;
+                label3.Visible = true;
+                swaptime = new Thread(countd);
+                swaptime.Start();
+            }
+            //MessageBox.Show(turn.ToString());
+            if(time2 == 0)
+            {
+                label4.Visible = false;
+                label3.Visible = false;
+            }
+
         }
+
+        int time2 = 60;
+        private void countd()
+        {
+            while(time2>0)
+            {
+                time2--;
+                Thread.Sleep(1000);
+            }
+        }
+        
 
         private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
         {
@@ -531,42 +645,112 @@ namespace BanPickLol
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            a.Abort();
-            b.Abort();
+            try
+            {
+                a.Abort();
+                //b.Abort();
+                c.Abort();
+                swaptime.Abort();
+            }
+            catch
+            { }
+           
         }
 
-
+        Thread swaptime;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if(time2 >= 10)
+            {
+                label4.Text = time2.ToString();
+                label3.Text = time2.ToString();
+            }
+            else
+            {
+                label4.Text = "0" + time2.ToString();
+                label3.Text = "0" + time2.ToString();
+            }
+
+            if (time2==0)
+            {
+                try
+                {
+                    swaptime.Abort();
+                }
+                catch
+                { }
+                label4.Visible = false;
+                label3.Visible = false;
+                label2.Visible = false;
+
+            }
+
+            //lbltest.Visible = true;
+            //Thread.Sleep(500);
+            //lbltest.Show();
+            //lbltest.Visible = false;
             if (banType == 0) // set vị trí của chữ "chọn tướng"
             {
                 switch (turn)
                 {
                     case 0:
-                    case 1:
                     case 2:
-                    case 3:
                     case 4:
+                        lbltest.Visible = false;
+                        label1.Location = new Point(259, 4);
+                        label1.BackColor = Color.SteelBlue;
+                        label2.BackColor = Color.SteelBlue;
+                        break;
+                    case 3:
+                    case 1:
                     case 5:
-                        lblpick.Visible = false;
+                        lbltest.Visible = false;
+                        label1.Location = new Point(621, 4);
+                        label1.BackColor = Color.Maroon;
+                        label2.BackColor = Color.Maroon;
                         break;
                     case 6:
                     case 9:
                     case 10:
-                    case 13:
-                    case 14:
-                        lblpick.Visible = true;
-                        lblpick.Location = new Point(arrbox[turn].Location.X + 148, arrbox[turn].Location.Y + 26);
+                    case 17:
+                    case 18:
+                        lbltest.Parent = arrbox[turn];
+                        lbltest.Location = new Point(65, 2);
+                        label1.Location = new Point(259, 4);
+                        label1.BackColor = Color.SteelBlue;
+                        label2.BackColor = Color.SteelBlue;
+                        lbltest.Visible = true;
+                        //var pos = this.PointToScreen(lblpick.Location);
+                        //pos = arrbox[turn].PointToClient(pos);
+                        //lblpick.Location = pos;
+                        //lblpick.Location = new Point(arrbox[turn].Location.X + 148, arrbox[turn].Location.Y + 26);
+                        //lblpick.Parent = arrbox[turn];
+                        //lblpick.BackColor = Color.Transparent;
+                   
+
+                        //lblpick.Location = new Point(168, arrbox[turn].Location.Y + 35);
                         break;
                     default:
                         try
                         {
-                            lblpick.Visible = true;
-                            lblpick.Location = new Point(626, arrbox[turn].Location.Y + 26);
+
+                            lbltest.Parent = arrbox[turn];
+                            lbltest.Location = new Point(5, 2);
+                            //lbltest.Location = new Point(709, 99);
+                            label1.Location = new Point(621, 4);
+                            label1.BackColor = Color.Maroon;
+                            label2.BackColor = Color.Maroon;
+                            lbltest.Visible = true;
+                            //lblpick.Parent = arrbox[turn];
+
+                            //lblpick.Location = new Point(626, arrbox[turn].Location.Y + 26);
                         }
                         catch
-                        { }
+                        {
+                            lbltest.Visible = false;
+                            label2.BackColor = Color.Black;
+                        }
 
                         break;
 
@@ -577,33 +761,60 @@ namespace BanPickLol
                 switch (turn)
                 {
                     case 0:
-                    case 1:
                     case 2:
-                    case 3:
                     case 4:
-                    case 5:
-                    case 12:
                     case 13:
-                    case 14:
                     case 15:
-                        lblpick.Visible = false;
+                        lbltest.Visible = false;
+                        label1.Location = new Point(259, 4);
+                        label1.BackColor = Color.SteelBlue;
+                        label2.BackColor = Color.SteelBlue;
+                        break;
+                    case 5:
+                    case 1:
+                    case 3:
+                    case 12:
+                    case 14:
+                        lbltest.Visible = false;
+                        label1.Location = new Point(621, 4);
+                        label1.BackColor = Color.Maroon;
+                        label2.BackColor = Color.Maroon;
                         break;
                     case 6:
                     case 9:
                     case 10:
-                    case 17:
                     case 18:
-                        lblpick.Visible = true;
-                        lblpick.Location = new Point(arrbox[turn].Location.X + 148, arrbox[turn].Location.Y + 26);
+                    case 17:
+                        lbltest.Parent = arrbox[turn];
+                        lbltest.Location = new Point(65, 2);
+                        label1.Location = new Point(259, 4);
+                        label1.BackColor = Color.SteelBlue;
+                        label2.BackColor = Color.SteelBlue;
+                        lbltest.Visible = true;
+                        //lblpick.Location = new Point(arrbox[turn].Location.X + 148, arrbox[turn].Location.Y + 26);
+                        //lblpick.Parent = arrbox[turn];
+                        //lblpick.BackColor = Color.Transparent;
+                        //lblpick.Location = new Point(168, arrbox[turn].Location.Y + 35);                                   
                         break;
                     default:
                         try
                         {
-                            lblpick.Visible = true;
-                            lblpick.Location = new Point(626, arrbox[turn].Location.Y + 26);
+                            lbltest.Visible = true;
+                            lbltest.Parent = arrbox[turn];
+                            lbltest.Location = new Point(5, 2);
+                            label1.Location = new Point(621, 4);
+                            label1.BackColor = Color.Maroon;
+                            label2.BackColor = Color.Maroon;
+                            //lblpick.Visible = true;
+                            //lblpick.Parent = arrbox[turn];
+                            //lblpick.BackColor = Color.Transparent;
+                            //lblpick.Location = new Point(626, arrbox[turn].Location.Y + 26);
                         }
                         catch
-                        { }
+                        {
+                            lbltest.Visible = false;
+                            label2.BackColor = Color.Black;
+                        }
 
                         break;
 
@@ -611,9 +822,10 @@ namespace BanPickLol
             }
             if (res == 999)
             {
+                label1.Visible = false;
                 listView1.Enabled = false;
                 button1.Enabled = false;
-                lblpick.Visible = false;
+                //lblpick.Visible = false;
 
                 label2.Text = "Giai đoạn Swap !";
                 label1.Enabled = false;
@@ -644,80 +856,176 @@ namespace BanPickLol
             }
             if (result == DialogResult.OK)
             {
-                b.Abort();
+                //b.Abort();
+                
                 a.Abort();
-                this.Close();
+                c.Abort();
+                Close();
             }
-            switch(turn)
+            if(banType == 1)
             {
-                case 0:
+                if ( turn == 0 )
+                {
                     label2.Text = "Giai đoạn cấm 1";
-                    break;
-                case 1:
-                    label2.Text = "Giai đoạn cấm 2";
-                    break;
-                case 2:
-                    label2.Text = "Giai đoạn cấm 3";
-                    break;
-                case 3:
-                    label2.Text = "Giai đoạn cấm 4";
-                    break;
-                case 4:
-                    label2.Text = "Giai đoạn cấm 5";
-                    break;
-                case 5:
-                    label2.Text = "Giai đoạn cấm 6";
-                    break;
-                case 6:
+                }
+                else if ( turn == 1 )
+                {
+                    label2.Text = "Giai đoạn cấm 1";
+                }
+                else if ( turn == 2 )
+                {
+                    label2.Text = "Giai đoạn cấm 1";
+                }
+                else if ( turn == 3 )
+                {
+                    label2.Text = "Giai đoạn cấm 1";
+                }
+                else if ( turn == 4 )
+                {
+                    label2.Text = "Giai đoạn cấm 1";
+                }
+                else if ( turn == 5 )
+                {
+                    label2.Text = "Giai đoạn cấm 1";
+                }
+                else if ( turn == 6 )
+                {
                     label2.Text = "Giai đoạn chọn 1";
-                    break;
-                case 7:
+                }
+                else if ( turn == 7 )
+                {
+                    label2.Text = "Giai đoạn chọn 1";
+                }
+                else if ( turn == 8 )
+                {
+                    label2.Text = "Giai đoạn chọn 1";
+                }
+                else if ( turn == 9 )
+                {
+                    label2.Text = "Giai đoạn chọn 1";
+                }
+                else if ( turn == 10 )
+                {
+                    label2.Text = "Giai đoạn chọn 1";
+                }
+                else if ( turn == 11 )
+                {
+                    label2.Text = "Giai đoạn chọn 1";
+                }
+                else if ( turn == 12 )
+                {
+                    label2.Text = "Giai đoạn cấm 2";
+                }
+                else if ( turn == 13 )
+                {
+                    label2.Text = "Giai đoạn cấm 2";
+                }
+                else if ( turn == 14 )
+                {
+                    label2.Text = "Giai đoạn cấm 2";
+                }
+                else if ( turn == 15 )
+                {
+                    label2.Text = "Giai đoạn cấm 2";
+                }
+                else if ( turn == 16 )
+                {
                     label2.Text = "Giai đoạn chọn 2";
-                    break;
-                case 8:
-                    label2.Text = "Giai đoạn chọn 3";
-                    break;
-                case 9:
-                    label2.Text = "Giai đoạn chọn 4";
-                    break;
-                case 10:
-                    label2.Text = "Giai đoạn chọn 5";
-                    break;
-                case 11:
-                    label2.Text = "Giai đoạn chọn 6";
-                    break;
-                case 12:
-                    label2.Text = "Giai đoạn cấm 7";
-                    break;
-                case 13:
-                    label2.Text = "Giai đoạn cấm 8";
-                    break;
-                case 14:
-                    label2.Text = "Giai đoạn cấm 9";
-                    break;
-                case 15:
-                    label2.Text = "Giai đoạn cấm 10";
-                    break;
-                case 16:
-                    label2.Text = "Giai đoạn chọn 7";
-                    break;
-                case 17:
-                    label2.Text = "Giai đoạn chọn 8";
-                    break;
-                case 18:
-                    label2.Text = "Giai đoạn chọn 9";
-                    break;
-                case 19:
-                    label2.Text = "Giai đoạn chọn 10";
-                    break;
+                }
+                else if ( turn == 17 )
+                {
+                    label2.Text = "Giai đoạn chọn 2";
+                }
+                else if ( turn == 18 )
+                {
+                    label2.Text = "Giai đoạn chọn 2";
+                }
+                else if ( turn == 19 )
+                {
+                    label2.Text = "Giai đoạn chọn 2";
+                }
             }
-            label1.Text = time.ToString();
+            else
+            {
+                switch (turn)
+                {
+                    case 0:
+                        label2.Text = @"Giai đoạn cấm 01";
+                        break;
+                    case 1:
+                        label2.Text = "Giai đoạn cấm 02";
+                        break;
+                    case 2:
+                        label2.Text = "Giai đoạn cấm 03";
+                        break;
+                    case 3:
+                        label2.Text = "Giai đoạn cấm 04";
+                        break;
+                    case 4:
+                        label2.Text = "Giai đoạn cấm 05";
+                        break;
+                    case 5:
+                        label2.Text = "Giai đoạn cấm 06";
+                        break;
+                    case 6:
+                        label2.Text = "Giai đoạn chọn 01";
+                        break;
+                    case 7:
+                        label2.Text = "Giai đoạn chọn 02";
+                        break;
+                    case 8:
+                        label2.Text = "Giai đoạn chọn 03";
+                        break;
+                    case 9:
+                        label2.Text = "Giai đoạn chọn 04";
+                        break;
+                    case 10:
+                        label2.Text = "Giai đoạn chọn 05";
+                        break;
+                    case 11:
+                        label2.Text = "Giai đoạn chọn 06";
+                        break;
+                    case 12:
+                        label2.Text = "Giai đoạn cấm 07";
+                        break;
+                    case 13:
+                        label2.Text = "Giai đoạn cấm 08";
+                        break;
+                    case 14:
+                        label2.Text = "Giai đoạn cấm 09";
+                        break;
+                    case 15:
+                        label2.Text = "Giai đoạn cấm 10";
+                        break;
+                    case 16:
+                        label2.Text = "Giai đoạn chọn 07";
+                        break;
+                    case 17:
+                        label2.Text = "Giai đoạn chọn 08";
+                        break;
+                    case 18:
+                        label2.Text = "Giai đoạn chọn 09";
+                        break;
+                    case 19:
+                        label2.Text = "Giai đoạn chọn 10";
+                        break;
+                }
+            }
+            if(time >= 10)
+            {
+                label1.Text = time.ToString();
+            }
+            else
+            {
+                label1.Text = "0" + time.ToString();
+            }
+
         }
 
         private void Swap(object sender, EventArgs e)
         {
             string name = ((Button)sender).Name.Substring(((Button)sender).Name.Length - 2, 2);
-            TextBox temp = (TextBox) this.Controls["SwapText" + name];
+            TextBox temp = (TextBox) Controls["SwapText" + name];
 
             int team = name[0] - 48;
             int currentPosition = name[1] - 48;
@@ -729,7 +1037,7 @@ namespace BanPickLol
                 {
                     currentPosition += team * 5;
                     swapPosition += team * 5;
-                    PictureBox currentBox = (PictureBox)this.Controls["pick" + currentPosition];
+                    PictureBox currentBox = (PictureBox)Controls["pick" + currentPosition];
                     PictureBox swapBox = (PictureBox)this.Controls["pick" + swapPosition];
 
                     var tempImage = currentBox.Image;
@@ -755,3 +1063,12 @@ namespace BanPickLol
         }
     }
 }
+//line 993
+//.
+//.
+//.
+//.
+//.
+//.
+//.
+//line 1000

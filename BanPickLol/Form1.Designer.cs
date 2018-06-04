@@ -76,7 +76,19 @@
             this.SwapButton14 = new System.Windows.Forms.Button();
             this.SwapText15 = new System.Windows.Forms.TextBox();
             this.SwapButton15 = new System.Windows.Forms.Button();
-            this.lblpick = new System.Windows.Forms.Label();
+            this.lbltest = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelName1 = new System.Windows.Forms.Label();
+            this.labelName2 = new System.Windows.Forms.Label();
+            this.labelName3 = new System.Windows.Forms.Label();
+            this.labelName4 = new System.Windows.Forms.Label();
+            this.labelName5 = new System.Windows.Forms.Label();
+            this.labelName6 = new System.Windows.Forms.Label();
+            this.labelName7 = new System.Windows.Forms.Label();
+            this.labelName8 = new System.Windows.Forms.Label();
+            this.labelName9 = new System.Windows.Forms.Label();
+            this.labelName10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pick1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pick2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pick3)).BeginInit();
@@ -101,7 +113,8 @@
             // 
             // pick1
             // 
-            this.pick1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pick1.BackColor = System.Drawing.Color.DarkRed;
+            this.pick1.Image = ((System.Drawing.Image)(resources.GetObject("pick1.Image")));
             this.pick1.Location = new System.Drawing.Point(98, 65);
             this.pick1.Name = "pick1";
             this.pick1.Size = new System.Drawing.Size(144, 52);
@@ -111,88 +124,106 @@
             // 
             // pick2
             // 
-            this.pick2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pick2.BackColor = System.Drawing.Color.DarkRed;
+            this.pick2.Image = ((System.Drawing.Image)(resources.GetObject("pick2.Image")));
             this.pick2.Location = new System.Drawing.Point(98, 123);
             this.pick2.Name = "pick2";
             this.pick2.Size = new System.Drawing.Size(144, 52);
+            this.pick2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pick2.TabIndex = 1;
             this.pick2.TabStop = false;
             // 
             // pick3
             // 
-            this.pick3.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pick3.BackColor = System.Drawing.Color.DarkRed;
+            this.pick3.Image = ((System.Drawing.Image)(resources.GetObject("pick3.Image")));
             this.pick3.Location = new System.Drawing.Point(98, 181);
             this.pick3.Name = "pick3";
             this.pick3.Size = new System.Drawing.Size(144, 52);
+            this.pick3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pick3.TabIndex = 2;
             this.pick3.TabStop = false;
             // 
             // pick4
             // 
-            this.pick4.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pick4.BackColor = System.Drawing.Color.DarkRed;
+            this.pick4.Image = ((System.Drawing.Image)(resources.GetObject("pick4.Image")));
             this.pick4.Location = new System.Drawing.Point(98, 239);
             this.pick4.Name = "pick4";
             this.pick4.Size = new System.Drawing.Size(144, 52);
+            this.pick4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pick4.TabIndex = 3;
             this.pick4.TabStop = false;
             // 
             // pick5
             // 
-            this.pick5.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pick5.BackColor = System.Drawing.Color.DarkRed;
+            this.pick5.Image = ((System.Drawing.Image)(resources.GetObject("pick5.Image")));
             this.pick5.Location = new System.Drawing.Point(98, 297);
             this.pick5.Name = "pick5";
             this.pick5.Size = new System.Drawing.Size(144, 52);
+            this.pick5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pick5.TabIndex = 4;
             this.pick5.TabStop = false;
             // 
             // pick6
             // 
             this.pick6.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pick6.Image = ((System.Drawing.Image)(resources.GetObject("pick6.Image")));
             this.pick6.Location = new System.Drawing.Point(701, 65);
             this.pick6.Name = "pick6";
             this.pick6.Size = new System.Drawing.Size(144, 52);
+            this.pick6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pick6.TabIndex = 5;
             this.pick6.TabStop = false;
             // 
             // pick7
             // 
             this.pick7.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pick7.Image = ((System.Drawing.Image)(resources.GetObject("pick7.Image")));
             this.pick7.Location = new System.Drawing.Point(701, 123);
             this.pick7.Name = "pick7";
             this.pick7.Size = new System.Drawing.Size(144, 52);
+            this.pick7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pick7.TabIndex = 6;
             this.pick7.TabStop = false;
             // 
             // pick8
             // 
             this.pick8.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pick8.Image = ((System.Drawing.Image)(resources.GetObject("pick8.Image")));
             this.pick8.Location = new System.Drawing.Point(701, 181);
             this.pick8.Name = "pick8";
             this.pick8.Size = new System.Drawing.Size(144, 52);
+            this.pick8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pick8.TabIndex = 7;
             this.pick8.TabStop = false;
             // 
             // pick9
             // 
             this.pick9.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pick9.Image = ((System.Drawing.Image)(resources.GetObject("pick9.Image")));
             this.pick9.Location = new System.Drawing.Point(701, 239);
             this.pick9.Name = "pick9";
             this.pick9.Size = new System.Drawing.Size(144, 52);
+            this.pick9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pick9.TabIndex = 8;
             this.pick9.TabStop = false;
             // 
             // pick10
             // 
             this.pick10.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pick10.Image = ((System.Drawing.Image)(resources.GetObject("pick10.Image")));
             this.pick10.Location = new System.Drawing.Point(701, 297);
             this.pick10.Name = "pick10";
             this.pick10.Size = new System.Drawing.Size(144, 52);
+            this.pick10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pick10.TabIndex = 9;
             this.pick10.TabStop = false;
             // 
             // ban1
             // 
-            this.ban1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ban1.BackColor = System.Drawing.Color.LightSlateGray;
             this.ban1.Location = new System.Drawing.Point(98, 377);
             this.ban1.Name = "ban1";
             this.ban1.Size = new System.Drawing.Size(44, 36);
@@ -201,7 +232,7 @@
             // 
             // ban3
             // 
-            this.ban3.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ban3.BackColor = System.Drawing.Color.LightSlateGray;
             this.ban3.Location = new System.Drawing.Point(148, 377);
             this.ban3.Name = "ban3";
             this.ban3.Size = new System.Drawing.Size(44, 36);
@@ -210,7 +241,7 @@
             // 
             // ban5
             // 
-            this.ban5.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ban5.BackColor = System.Drawing.Color.LightSlateGray;
             this.ban5.Location = new System.Drawing.Point(198, 377);
             this.ban5.Name = "ban5";
             this.ban5.Size = new System.Drawing.Size(44, 36);
@@ -219,7 +250,7 @@
             // 
             // ban7
             // 
-            this.ban7.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ban7.BackColor = System.Drawing.Color.LightSlateGray;
             this.ban7.Location = new System.Drawing.Point(112, 419);
             this.ban7.Name = "ban7";
             this.ban7.Size = new System.Drawing.Size(44, 36);
@@ -228,7 +259,7 @@
             // 
             // ban9
             // 
-            this.ban9.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ban9.BackColor = System.Drawing.Color.LightSlateGray;
             this.ban9.Location = new System.Drawing.Point(162, 419);
             this.ban9.Name = "ban9";
             this.ban9.Size = new System.Drawing.Size(44, 36);
@@ -237,7 +268,7 @@
             // 
             // ban10
             // 
-            this.ban10.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ban10.BackColor = System.Drawing.Color.LightSlateGray;
             this.ban10.Location = new System.Drawing.Point(733, 419);
             this.ban10.Name = "ban10";
             this.ban10.Size = new System.Drawing.Size(44, 36);
@@ -246,7 +277,7 @@
             // 
             // ban8
             // 
-            this.ban8.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ban8.BackColor = System.Drawing.Color.LightSlateGray;
             this.ban8.Location = new System.Drawing.Point(783, 419);
             this.ban8.Name = "ban8";
             this.ban8.Size = new System.Drawing.Size(44, 36);
@@ -255,7 +286,7 @@
             // 
             // ban6
             // 
-            this.ban6.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ban6.BackColor = System.Drawing.Color.LightSlateGray;
             this.ban6.Location = new System.Drawing.Point(701, 377);
             this.ban6.Name = "ban6";
             this.ban6.Size = new System.Drawing.Size(44, 36);
@@ -264,7 +295,7 @@
             // 
             // ban4
             // 
-            this.ban4.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ban4.BackColor = System.Drawing.Color.LightSlateGray;
             this.ban4.Location = new System.Drawing.Point(751, 377);
             this.ban4.Name = "ban4";
             this.ban4.Size = new System.Drawing.Size(44, 36);
@@ -273,7 +304,7 @@
             // 
             // ban2
             // 
-            this.ban2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.ban2.BackColor = System.Drawing.Color.LightSlateGray;
             this.ban2.Location = new System.Drawing.Point(801, 377);
             this.ban2.Name = "ban2";
             this.ban2.Size = new System.Drawing.Size(44, 36);
@@ -324,7 +355,7 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label1.Location = new System.Drawing.Point(259, 4);
+            this.label1.Location = new System.Drawing.Point(621, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 44);
             this.label1.TabIndex = 23;
@@ -341,7 +372,7 @@
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label2.Location = new System.Drawing.Point(387, 37);
+            this.label2.Location = new System.Drawing.Point(396, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 24;
@@ -527,17 +558,142 @@
             this.SwapButton15.UseVisualStyleBackColor = false;
             this.SwapButton15.Click += new System.EventHandler(this.Swap);
             // 
-            // lblpick
+            // lbltest
             // 
-            this.lblpick.AutoSize = true;
-            this.lblpick.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpick.ForeColor = System.Drawing.Color.Orange;
-            this.lblpick.Location = new System.Drawing.Point(626, 87);
-            this.lblpick.Name = "lblpick";
-            this.lblpick.Size = new System.Drawing.Size(71, 13);
-            this.lblpick.TabIndex = 45;
-            this.lblpick.Text = "chọn tướng";
-            this.lblpick.Click += new System.EventHandler(this.lblpick_Click);
+            this.lbltest.AutoSize = true;
+            this.lbltest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltest.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.lbltest.Location = new System.Drawing.Point(159, 72);
+            this.lbltest.Name = "lbltest";
+            this.lbltest.Size = new System.Drawing.Size(78, 15);
+            this.lbltest.TabIndex = 46;
+            this.lbltest.Text = "Đang Chọn";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.SteelBlue;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Goldenrod;
+            this.label3.Location = new System.Drawing.Point(259, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 44);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "30";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Maroon;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Goldenrod;
+            this.label4.Location = new System.Drawing.Point(621, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 44);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "30";
+            // 
+            // labelName1
+            // 
+            this.labelName1.AutoSize = true;
+            this.labelName1.BackColor = System.Drawing.Color.Transparent;
+            this.labelName1.Location = new System.Drawing.Point(162, 99);
+            this.labelName1.Name = "labelName1";
+            this.labelName1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelName1.Size = new System.Drawing.Size(35, 13);
+            this.labelName1.TabIndex = 49;
+            this.labelName1.Text = "label5";
+            this.labelName1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelName2
+            // 
+            this.labelName2.AutoSize = true;
+            this.labelName2.BackColor = System.Drawing.Color.Transparent;
+            this.labelName2.Location = new System.Drawing.Point(162, 155);
+            this.labelName2.Name = "labelName2";
+            this.labelName2.Size = new System.Drawing.Size(35, 13);
+            this.labelName2.TabIndex = 50;
+            this.labelName2.Text = "label6";
+            // 
+            // labelName3
+            // 
+            this.labelName3.AutoSize = true;
+            this.labelName3.BackColor = System.Drawing.Color.Transparent;
+            this.labelName3.Location = new System.Drawing.Point(162, 213);
+            this.labelName3.Name = "labelName3";
+            this.labelName3.Size = new System.Drawing.Size(35, 13);
+            this.labelName3.TabIndex = 51;
+            this.labelName3.Text = "label7";
+            // 
+            // labelName4
+            // 
+            this.labelName4.AutoSize = true;
+            this.labelName4.BackColor = System.Drawing.Color.Transparent;
+            this.labelName4.Location = new System.Drawing.Point(162, 271);
+            this.labelName4.Name = "labelName4";
+            this.labelName4.Size = new System.Drawing.Size(35, 13);
+            this.labelName4.TabIndex = 52;
+            this.labelName4.Text = "label8";
+            // 
+            // labelName5
+            // 
+            this.labelName5.AutoSize = true;
+            this.labelName5.BackColor = System.Drawing.Color.Transparent;
+            this.labelName5.Location = new System.Drawing.Point(162, 326);
+            this.labelName5.Name = "labelName5";
+            this.labelName5.Size = new System.Drawing.Size(35, 13);
+            this.labelName5.TabIndex = 53;
+            this.labelName5.Text = "label9";
+            // 
+            // labelName6
+            // 
+            this.labelName6.AutoSize = true;
+            this.labelName6.BackColor = System.Drawing.Color.Transparent;
+            this.labelName6.Location = new System.Drawing.Point(748, 99);
+            this.labelName6.Name = "labelName6";
+            this.labelName6.Size = new System.Drawing.Size(41, 13);
+            this.labelName6.TabIndex = 54;
+            this.labelName6.Text = "label10";
+            // 
+            // labelName7
+            // 
+            this.labelName7.AutoSize = true;
+            this.labelName7.BackColor = System.Drawing.Color.Transparent;
+            this.labelName7.Location = new System.Drawing.Point(748, 155);
+            this.labelName7.Name = "labelName7";
+            this.labelName7.Size = new System.Drawing.Size(41, 13);
+            this.labelName7.TabIndex = 55;
+            this.labelName7.Text = "label11";
+            // 
+            // labelName8
+            // 
+            this.labelName8.AutoSize = true;
+            this.labelName8.BackColor = System.Drawing.Color.Transparent;
+            this.labelName8.Location = new System.Drawing.Point(748, 213);
+            this.labelName8.Name = "labelName8";
+            this.labelName8.Size = new System.Drawing.Size(41, 13);
+            this.labelName8.TabIndex = 56;
+            this.labelName8.Text = "label12";
+            // 
+            // labelName9
+            // 
+            this.labelName9.AutoSize = true;
+            this.labelName9.BackColor = System.Drawing.Color.Transparent;
+            this.labelName9.Location = new System.Drawing.Point(748, 271);
+            this.labelName9.Name = "labelName9";
+            this.labelName9.Size = new System.Drawing.Size(41, 13);
+            this.labelName9.TabIndex = 57;
+            this.labelName9.Text = "label13";
+            // 
+            // labelName10
+            // 
+            this.labelName10.AutoSize = true;
+            this.labelName10.BackColor = System.Drawing.Color.Transparent;
+            this.labelName10.Location = new System.Drawing.Point(748, 326);
+            this.labelName10.Name = "labelName10";
+            this.labelName10.Size = new System.Drawing.Size(41, 13);
+            this.labelName10.TabIndex = 58;
+            this.labelName10.Text = "label14";
             // 
             // Form1
             // 
@@ -545,7 +701,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(944, 501);
-            this.Controls.Add(this.lblpick);
+            this.Controls.Add(this.labelName10);
+            this.Controls.Add(this.labelName9);
+            this.Controls.Add(this.labelName8);
+            this.Controls.Add(this.labelName7);
+            this.Controls.Add(this.labelName6);
+            this.Controls.Add(this.labelName5);
+            this.Controls.Add(this.labelName4);
+            this.Controls.Add(this.labelName3);
+            this.Controls.Add(this.labelName2);
+            this.Controls.Add(this.labelName1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbltest);
             this.Controls.Add(this.SwapText15);
             this.Controls.Add(this.SwapButton15);
             this.Controls.Add(this.SwapText14);
@@ -592,9 +760,10 @@
             this.Controls.Add(this.pick2);
             this.Controls.Add(this.pick1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Ban Pick";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pick1)).EndInit();
@@ -670,7 +839,19 @@
         private System.Windows.Forms.Button SwapButton14;
         private System.Windows.Forms.TextBox SwapText15;
         private System.Windows.Forms.Button SwapButton15;
-        private System.Windows.Forms.Label lblpick;
+        private System.Windows.Forms.Label lbltest;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelName1;
+        private System.Windows.Forms.Label labelName2;
+        private System.Windows.Forms.Label labelName3;
+        private System.Windows.Forms.Label labelName4;
+        private System.Windows.Forms.Label labelName5;
+        private System.Windows.Forms.Label labelName6;
+        private System.Windows.Forms.Label labelName7;
+        private System.Windows.Forms.Label labelName8;
+        private System.Windows.Forms.Label labelName9;
+        private System.Windows.Forms.Label labelName10;
     }
 }
 
